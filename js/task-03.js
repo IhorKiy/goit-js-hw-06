@@ -24,22 +24,25 @@ const images = [
 const gallery = document.querySelector(".gallery")
 
 
-const allImage =({ url, alt }) => {
+const allImage = ({ url, alt }) => {
+  
+  return `<li class="list-item"><img src="${url}" alt="${alt}" width="200" heigth="200"/></li>`
 
-  const itemGallery = document.createElement('li');
-  itemGallery.classList.add('list-item');
 
-  const imgGallery = document.createElement('img');
-  imgGallery.setAttribute("src", url);
-  imgGallery.setAttribute("alt", alt);
+  // insertAdjacentHTML()
+//   const itemGallery = document.createElement('li');
+//   itemGallery.classList.add('list-item');
 
-itemGallery.append(imgGallery);
-  return itemGallery
+//   const imgGallery = document.createElement('img');
+//   imgGallery.setAttribute("src", url);
+//   imgGallery.setAttribute("alt", alt);
+
+// itemGallery.append(imgGallery);
+//   return itemGallery
 
 };
 
-const image = images.map(allImage);
+const image = images.map(allImage).join("");
 
-
-gallery.append(...image)
+gallery.insertAdjacentHTML("beforeend", image)
 
