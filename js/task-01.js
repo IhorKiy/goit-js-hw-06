@@ -8,5 +8,6 @@ console.log(`Number of categories:`, categories);
 
 	allLists.forEach(lists => {
     console.log('Category:', lists.firstElementChild.textContent);
-    console.log('Elements:', lists.children[1].childElementCount)
+        console.log('Elements:', lists.lastElementChild.children.length);
 	});
+// console.log('Elements:', lists.children[1].childElementCount)
